@@ -65,7 +65,8 @@ export default function SetAvatar() {
       data.push(buffer.toString("base64"));
     }
     setAvatars(data);
-    setIsLoading(false);}
+    setIsLoading(false);
+  }
     asyncFn();
   }, []);
   return (

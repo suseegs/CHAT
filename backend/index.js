@@ -10,6 +10,7 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
+//database connection
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -28,6 +29,8 @@ app.use("/api/messages", messageRoutes);
 const server = app.listen(process.env.PORT, () =>
   console.log(`Server started on ${process.env.PORT}`)
 );
+
+//socket io 
 const io = socket(server, {
   cors: {
     origin: "http://localhost:3000",
